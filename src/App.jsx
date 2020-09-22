@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
-function App() {
-  return <h1>Test</h1>;
+class App extends Component {
+  state = {};
+  render() {
+    return <h1>TEST</h1>;
+  }
 }
 
 export default App;
