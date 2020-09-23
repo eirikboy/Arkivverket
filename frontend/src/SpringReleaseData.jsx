@@ -8,6 +8,9 @@ import Button from "react-bootstrap/Button";
 const SpringReleaseData = () => {
   const [pageData, setPageData] = useState();
   const [pageNumber, setPageNumber] = useState(1);
+  const [hasPrevious, setPrevious] = useState(false); //We alwasy start with first page
+  const [hasNext, setNext] = useState(); //We dont know if there are multiple pages
+
   useEffect(() => {
     updatePageData().catch((e) => {
       console.error(e);
