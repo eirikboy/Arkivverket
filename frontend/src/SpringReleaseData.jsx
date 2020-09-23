@@ -13,6 +13,13 @@ const SpringReleaseData = () => {
       console.error(e);
     });
   }, [pageNumber]); //Trigger useEffect if pageNumber has changed
+  const updatePageData = async () => {
+    const response = await getSpringRelease(pageNumber);
+    setPageData(response.data);
+    setPrevious(pageNumber > 1 ? true : false);
+    setNext(
+      pageNumber < response.data.pagination.number_of_pages ? true : false
+    );
 };
 
   return (
