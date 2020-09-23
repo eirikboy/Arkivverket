@@ -15,5 +15,38 @@ const SpringReleaseData = () => {
   }, [pageNumber]); //Trigger useEffect if pageNumber has changed
 };
 
+  return (
+    <Container>
+      <Row className="justify-content-md-center">
+        <Button
+          className="mr-2"
+          disabled={!hasPrevious}
+          onClick={() => {
+            decreasePageNumber();
+          }}
+        >
+          Previous
+        </Button>
+        <Button
+          disabled={!hasNext}
+          onClick={() => {
+            increasePageNumber();
+          }}
+        >
+          Next
+        </Button>
+      </Row>
+      <Row>
+        {pageData?.results &&
+          pageData.results.map((sr) => (
+            <Card key={sr.source_id} style={{ width: "100%" }} className="mb-2">
+              <Card.Title>{sr.title}</Card.Title>
+              <Card.Text>{sr.description}</Card.Text>
+            </Card>
+          ))}
+      </Row>
+    </Container>
+  );
+};
 
 export default SpringReleaseData;
