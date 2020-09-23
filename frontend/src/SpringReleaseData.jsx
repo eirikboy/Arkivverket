@@ -43,7 +43,7 @@ const SpringReleaseData = () => {
     setNext(
       pageNumber < response.data.pagination.number_of_pages ? true : false
     );
-};
+  };
 
   return (
     <Container>
