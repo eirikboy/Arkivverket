@@ -13,6 +13,18 @@ const SpringReleaseData = () => {
       console.error(e);
     });
   }, [pageNumber]); //Trigger useEffect if pageNumber has changed
+
+  const increasePageNumber = () => {
+    if (
+      pageData.pagination &&
+      pageNumber < pageData.pagination.number_of_pages
+    ) {
+      setPageNumber(pageNumber + 1);
+      return true;
+    }
+    return false;
+  };
+
   const decreasePageNumber = () => {
     if (pageData.pagination && pageNumber > 1) {
       setPageNumber(pageNumber - 1);
