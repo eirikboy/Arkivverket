@@ -1,1 +1,7 @@
+My initial idea was to use React to access and present the data. I was going to use the package Axios to send requests to the API and handle the response. I struggle a bit with Cors/Access-Control-Allow-Origin errors thinking there was an error with my code, my assumption was the backend had a cors policy. After googling the issue and trying several solutions without any success the feedback from stackoverflow etc was the lack of cors policy in the backend. The general consent was to create your own proxy and then set my own cors policy there, so I did.
+In this github repo you will se two folders, one for the proxy and one for the frondend. The proxy uses nodejs with the express package. To setup cors policy on the backend expressjs per documentation recommended using the cors package. The package got is used to simplify HTTP requests. As for the frontend I used React, having used it before, and Axios as mentioned and also the package React-Bootstrap which basically lets you use Bootstrap as React components.
+
 Created inital project with: npx create-react-app arkivverket
+
+To run the program first cd into proxy and run npm i to install packages. You need to alter the PLACEHOLDER in line 11 in proxy.js with the API token. Then run the proxy with node proxy.js. The message “Proxy listening on port 3900” should appear in the terminal.
+Then cd into backend and run npm i to install packages. Then run the frontend with command npm start.
