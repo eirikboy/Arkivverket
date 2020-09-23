@@ -8,6 +8,11 @@ import Button from "react-bootstrap/Button";
 const SpringReleaseData = () => {
   const [pageData, setPageData] = useState();
   const [pageNumber, setPageNumber] = useState(1);
+  useEffect(() => {
+    updatePageData().catch((e) => {
+      console.error(e);
+    });
+  }, [pageNumber]); //Trigger useEffect if pageNumber has changed
 };
 
 
