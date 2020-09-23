@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
 const SpringReleaseData = () => {
+  const [pageData, setPageData] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
 };
 
 
